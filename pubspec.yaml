@@ -1,0 +1,43 @@
+name: aeroflow
+description: "AeroFlow Grid Command Center is a real-time wind farm simulation dashboard built with Flutter."
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^9.0.0
+  equatable: ^2.0.5
+  fl_chart: ^1.0.0
+  google_fonts: ^6.1.0
+  flutter_launcher_icons: ^0.14.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/logo.jpg"
+  windows:
+    generate: true
+    image_path: "assets/logo.jpg"
+  image_path: "assets/logo.jpg"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
