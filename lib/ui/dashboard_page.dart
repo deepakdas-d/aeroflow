@@ -160,31 +160,32 @@ class _NarrowLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       valueListenable: isInteractingNotifier,
-      builder: (_, interacting, _) {
+      builder: (_, interacting, __) {
         return ListView(
           physics: interacting
               ? const NeverScrollableScrollPhysics()
               : const BouncingScrollPhysics(),
-
           padding: const EdgeInsets.all(12),
-
           children: [
+            // ── 1. StabilityGauge ──────────────────────────
+            const SizedBox(height: 200, child: StabilityGauge()),
+
+            const SizedBox(height: 10),
+
+            // ── 2. PowerChart ──────────────────────────────
+            const SizedBox(height: 220, child: PowerChart()),
+
+            const SizedBox(height: 12),
+
+            // ── 3. TurbineCards ────────────────────────────
             for (int i = 0; i < 6; i++) ...[
               if (i > 0) const SizedBox(height: 10),
-
               TurbineCard(index: i),
             ],
 
             const SizedBox(height: 12),
 
-            const SizedBox(height: 200, child: StabilityGauge()),
-
-            const SizedBox(height: 10),
-
-            const SizedBox(height: 220, child: PowerChart()),
-
-            const SizedBox(height: 10),
-
+            // ── 4. EventLog ────────────────────────────────
             const SizedBox(height: 260, child: EventLog()),
 
             const SizedBox(height: 12),
